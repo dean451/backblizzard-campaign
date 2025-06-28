@@ -87,10 +87,12 @@ const ctaLink = "https://www.kickstarter.com"; // Update to your actual link
         user-select: none;
         animation: fall linear infinite;
         opacity: 0.8;
+        left: 0;
+        transform: translateX(0);
       }
       @keyframes fall {
         to {
-          transform: translateY(100vh);
+          transform: translateY(100vh) translateX(var(--drift, 0));
         }
       }
     </style>
@@ -150,13 +152,15 @@ const ctaLink = "https://www.kickstarter.com"; // Update to your actual link
 
     <script>
       const snowContainer = document.getElementById("snow");
-      const snowflakes = ["❄️", "❅", "❆"];
+      const snowflakes = ["❄️"];
 
       function createSnowflake() {
         const flake = document.createElement("div");
         flake.className = "snowflake";
         flake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
-        flake.style.left = Math.random() * 100 + "vw";
+        const leftPos = Math.random() * 100;
+        flake.style.left = `${leftPos}vw`;
+        flake.style.setProperty('--drift', `${(Math.random() - 0.5) * 100}px`);
         flake.style.animationDuration = 5 + Math.random() * 5 + "s";
         flake.style.fontSize = 1 + Math.random() * 1.5 + "rem";
         snowContainer.appendChild(flake);
