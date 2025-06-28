@@ -1,16 +1,9 @@
----
-const tagline = "Put your back pain on ice.";
-const subtitle = "The world’s first cold therapy foam roller — designed to freeze inflammation and restore mobility.";
-const ctaText = "Back us on Kickstarter";
-const ctaLink = "https://www.kickstarter.com"; // Update to your actual link
----
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{tagline}</title>
+    <title>Put your back pain on ice.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -19,37 +12,48 @@ const ctaLink = "https://www.kickstarter.com"; // Update to your actual link
         font-family: 'Inter', sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f9fafb;
-        color: #111;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #fff;
         line-height: 1.6;
+        min-height: 100vh;
       }
       header, section, footer {
         padding: 4rem 2rem;
         max-width: 800px;
         margin: 0 auto;
         text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
       }
       h1 {
         font-size: 2.5rem;
         margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
       }
       h2 {
         font-size: 1.75rem;
         margin-top: 3rem;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
       }
       .cta-button {
         display: inline-block;
-        background: #0070f3;
+        background: linear-gradient(45deg, #ff6b6b, #ee5a24);
         color: white;
         padding: 1rem 2rem;
-        border-radius: 8px;
+        border-radius: 50px;
         text-decoration: none;
         font-weight: 600;
-        transition: background 0.3s;
+        transition: all 0.3s ease;
         margin-top: 1rem;
+        box-shadow: 0 4px 15px rgba(238, 90, 36, 0.4);
+        text-shadow: none;
       }
       .cta-button:hover {
-        background: #005bb5;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(238, 90, 36, 0.6);
       }
       ul {
         list-style: none;
@@ -58,16 +62,27 @@ const ctaLink = "https://www.kickstarter.com"; // Update to your actual link
       }
       li {
         margin: 1rem 0;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 10px;
+        border-left: 4px solid #ff6b6b;
       }
       table {
         width: 100%;
         margin-top: 2rem;
         border-collapse: collapse;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
       }
       td, th {
-        padding: 0.75rem;
-        border-bottom: 1px solid #ccc;
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         text-align: left;
+      }
+      th {
+        background: rgba(255, 255, 255, 0.2);
+        font-weight: 600;
       }
       #snow {
         position: fixed;
@@ -76,106 +91,129 @@ const ctaLink = "https://www.kickstarter.com"; // Update to your actual link
         width: 100%;
         height: 100%;
         pointer-events: none;
-        z-index: 9999;
+        z-index: 1;
         overflow: hidden;
       }
       .snowflake {
         position: absolute;
         top: -2em;
-        color: #fff;
+        color: rgba(255, 255, 255, 0.8);
         font-size: 1.5rem;
         user-select: none;
         animation: fall linear infinite;
-        opacity: 0.8;
-        left: 50%;
-        transform: translateX(-50%);
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
       }
-
       @keyframes fall {
-        to {
-          transform: translateX(-50%) translateY(100vh); /* ❄️ preserve X! */
+        0% {
+          transform: translateY(-100px) translateX(0) rotate(0deg);
+        }
+        100% {
+          transform: translateY(100vh) translateX(var(--drift, 0)) rotate(360deg);
         }
       }
-
-
+      .content-wrapper {
+        position: relative;
+        z-index: 2;
+        padding: 2rem 0;
+      }
     </style>
   </head>
   <body>
     <div id="snow"></div>
 
-    <header>
-      <h1>{tagline}</h1>
-      <p>{subtitle}</p>
-      <a class="cta-button" href={ctaLink} target="_blank">{ctaText}</a>
-    </header>
+    <div class="content-wrapper">
+      <header>
+        <h1>Put your back pain on ice.</h1>
+        <p>The world's first cold therapy foam roller — designed to freeze inflammation and restore mobility.</p>
+        <a class="cta-button" href="https://www.kickstarter.com" target="_blank">Back us on Kickstarter</a>
+      </header>
 
-    <section>
-      <h2>The Problem</h2>
-      <p>Traditional foam rollers warm up after minutes. Ice packs slide off. You need pressure <strong>and</strong> cold — and you need it to last.</p>
-    </section>
+      <section>
+        <h2>The Problem</h2>
+        <p>Traditional foam rollers warm up after minutes. Ice packs slide off. You need pressure <strong>and</strong> cold — and you need it to last.</p>
+      </section>
 
-    <section>
-      <h2>Meet Backblizzard</h2>
-      <p>A purpose-built foam roller with a freezable cold core and a firm-yet-comfortable surface.</p>
-      <ul>
-        <li>❄️ Holds cold for 30+ minutes</li>
-        <li>🧘 Full-spine width, perfect for laying flat</li>
-        <li>💪 Durable, non-slip exterior</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Meet Backblizzard</h2>
+        <p>A purpose-built foam roller with a freezable cold core and a firm-yet-comfortable surface.</p>
+        <ul>
+          <li>❄️ Holds cold for 30+ minutes</li>
+          <li>🧘 Full-spine width, perfect for laying flat</li>
+          <li>💪 Durable, non-slip exterior</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Why It Works</h2>
-      <table>
-        <tr><th>Feature</th><th>Why It Matters</th></tr>
-        <tr><td>Freezable core</td><td>Targets inflammation deeply</td></tr>
-        <tr><td>High-density shell</td><td>Supports deep muscle release</td></tr>
-        <tr><td>Ergonomic design</td><td>Aligns with your spine</td></tr>
-        <tr><td>Cold therapy anywhere</td><td>No plugs, no mess</td></tr>
-      </table>
-    </section>
+      <section>
+        <h2>Why It Works</h2>
+        <table>
+          <tr><th>Feature</th><th>Why It Matters</th></tr>
+          <tr><td>Freezable core</td><td>Targets inflammation deeply</td></tr>
+          <tr><td>High-density shell</td><td>Supports deep muscle release</td></tr>
+          <tr><td>Ergonomic design</td><td>Aligns with your spine</td></tr>
+          <tr><td>Cold therapy anywhere</td><td>No plugs, no mess</td></tr>
+        </table>
+      </section>
 
-    <section>
-      <h2>Early Backer Rewards</h2>
-      <ul>
-        <li>🚀 Founders-only pricing</li>
-        <li>🎁 Bonus recovery content</li>
-        <li>📢 Your feedback shapes the final design</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Early Backer Rewards</h2>
+        <ul>
+          <li>🚀 Founders-only pricing</li>
+          <li>🎁 Bonus recovery content</li>
+          <li>📢 Your feedback shapes the final design</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Freeze your pain, not your progress.</h2>
-      <a class="cta-button" href={ctaLink} target="_blank">{ctaText}</a>
-    </section>
+      <section>
+        <h2>Freeze your pain, not your progress.</h2>
+        <a class="cta-button" href="https://www.kickstarter.com" target="_blank">Back us on Kickstarter</a>
+      </section>
 
-    <footer>
-      <p>Made with ❤️ by Backblizzard</p>
-    </footer>
+      <footer>
+        <p>Made with ❤️ by Backblizzard</p>
+      </footer>
+    </div>
 
     <script>
       const snowContainer = document.getElementById("snow");
-      const snowflakes = ["❄️"];
+      const snowflakes = ["❄️", "❅", "❆", "🌨️"];
 
       function createSnowflake() {
         const flake = document.createElement("div");
         flake.className = "snowflake";
         flake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
 
-        const leftPos = 25 + Math.random() * 50; // from 25vw to 75vw
+        // Random horizontal position across full width
+        const leftPos = Math.random() * 100;
         flake.style.left = `${leftPos}vw`;
-        flake.style.transform = "translateX(-50%)";
 
-        const drift = (Math.random() - 0.5) * 100;
+        // Random horizontal drift
+        const drift = (Math.random() - 0.5) * 200;
         flake.style.setProperty('--drift', `${drift}px`);
-        flake.style.animationDuration = 10 + Math.random() * 10 + "s";
-        flake.style.fontSize = 1 + Math.random() * 1.5 + "rem";
+        
+        // Random fall duration and size
+        flake.style.animationDuration = (8 + Math.random() * 12) + "s";
+        flake.style.fontSize = (1 + Math.random() * 1) + "rem";
+        
+        // Random opacity for depth
+        flake.style.opacity = 0.4 + Math.random() * 0.6;
 
         snowContainer.appendChild(flake);
-        setTimeout(() => flake.remove(), 25000);
+        
+        // Remove snowflake after animation
+        setTimeout(() => {
+          if (flake.parentNode) {
+            flake.remove();
+          }
+        }, 25000);
       }
 
-      setInterval(createSnowflake, 400);
+      // Create initial burst of snowflakes
+      for (let i = 0; i < 20; i++) {
+        setTimeout(() => createSnowflake(), i * 200);
+      }
+
+      // Continue creating snowflakes
+      setInterval(createSnowflake, 300);
     </script>
   </body>
 </html>
