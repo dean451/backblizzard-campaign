@@ -87,13 +87,17 @@ const ctaLink = "https://www.kickstarter.com"; // Update to your actual link
         user-select: none;
         animation: fall linear infinite;
         opacity: 0.8;
+        left: 50%;
         transform: translateX(-50%);
       }
+
       @keyframes fall {
         to {
-          transform: translateY(100vh) translateX(var(--drift, 0));
+          transform: translateX(-50%) translateY(100vh); /* ❄️ preserve X! */
         }
       }
+
+
     </style>
   </head>
   <body>
@@ -151,7 +155,7 @@ const ctaLink = "https://www.kickstarter.com"; // Update to your actual link
 
     <script>
       const snowContainer = document.getElementById("snow");
-      const snowflakes = ["❄️", "❅", "❆"];
+      const snowflakes = ["❄️"];
 
       function createSnowflake() {
         const flake = document.createElement("div");
