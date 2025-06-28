@@ -103,8 +103,31 @@
         animation: fall linear infinite;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         will-change: transform;
+        /* Debug border to see snowflake bounds */
+        /* border: 1px solid red; */
       }
+      
+      /* Simpler animation without custom properties for testing */
       @keyframes fall {
+        0% {
+          transform: translateY(-100px) rotate(0deg);
+        }
+        25% {
+          transform: translateY(25vh) translateX(-50px) rotate(90deg);
+        }
+        50% {
+          transform: translateY(50vh) translateX(50px) rotate(180deg);
+        }
+        75% {
+          transform: translateY(75vh) translateX(-25px) rotate(270deg);
+        }
+        100% {
+          transform: translateY(100vh) translateX(25px) rotate(360deg);
+        }
+      }
+      
+      /* Alternative animation using CSS custom properties */
+      @keyframes fallWithDrift {
         0% {
           transform: translateY(-100px) translateX(0px) rotate(0deg);
         }
@@ -173,7 +196,7 @@
       </section>
 
       <footer>
-        <p>Made with ❤️ by Backblizzard</p>
+        <p>Made with ❄️ by Backblizzard</p>
       </footer>
     </div>
 
@@ -219,12 +242,14 @@
             flake.style.fontSize = size + "rem";
             
             // Random opacity for depth
-            flake.style.opacity = 0.3 + Math.random() * 0.7;
+            flake.style.opacity = (0.3 + Math.random() * 0.7).toString();
 
             // Add slight delay to animation start
             flake.style.animationDelay = (Math.random() * 2) + "s";
 
-            snowContainer.appendChild(flake);
+            if (snowContainer) {
+              snowContainer.appendChild(flake);
+            }
             
             setTimeout(function() {
               if (flake && flake.parentNode) {
