@@ -102,13 +102,17 @@
         user-select: none;
         animation: fall linear infinite;
         text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        will-change: transform;
       }
       @keyframes fall {
         0% {
-          transform: translateY(-100px) translateX(0) rotate(0deg);
+          transform: translateY(-100px) translateX(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(50vh) translateX(var(--drift, 0px)) rotate(180deg);
         }
         100% {
-          transform: translateY(100vh) translateX(var(--drift, 0)) rotate(360deg);
+          transform: translateY(100vh) translateX(calc(var(--drift, 0px) * 2)) rotate(360deg);
         }
       }
       .content-wrapper {
@@ -198,15 +202,27 @@
             flake.className = "snowflake";
             flake.textContent = snowflakes[Math.floor(Math.random() * snowflakes.length)];
 
+            // Random starting position across the full width
             const leftPos = Math.random() * 100;
-            flake.style.left = leftPos + "vw";
+            flake.style.left = leftPos + "%";
 
-            const drift = (Math.random() - 0.5) * 200;
+            // Random horizontal drift - make it more pronounced
+            const drift = (Math.random() - 0.5) * 300;
             flake.style.setProperty('--drift', drift + 'px');
             
-            flake.style.animationDuration = (8 + Math.random() * 12) + "s";
-            flake.style.fontSize = (1 + Math.random() * 1) + "rem";
-            flake.style.opacity = 0.4 + Math.random() * 0.6;
+            // Random animation duration
+            const duration = 8 + Math.random() * 12;
+            flake.style.animationDuration = duration + "s";
+            
+            // Random size
+            const size = 0.8 + Math.random() * 1.2;
+            flake.style.fontSize = size + "rem";
+            
+            // Random opacity for depth
+            flake.style.opacity = 0.3 + Math.random() * 0.7;
+
+            // Add slight delay to animation start
+            flake.style.animationDelay = (Math.random() * 2) + "s";
 
             snowContainer.appendChild(flake);
             
@@ -214,7 +230,7 @@
               if (flake && flake.parentNode) {
                 flake.remove();
               }
-            }, 25000);
+            }, (duration + 2) * 1000); // Clean up based on actual duration
           }
 
           // Create initial burst
