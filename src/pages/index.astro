@@ -1,44 +1,125 @@
+---
+const tagline = "Put your back pain on ice.";
+const subtitle = "The world’s first cold therapy foam roller — designed to freeze inflammation and restore mobility.";
+const ctaText = "Back us on Kickstarter";
+const ctaLink = "https://www.kickstarter.com"; // Update to your actual link
+---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Join the Movement</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{tagline}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
       body {
-        font-family: sans-serif;
-        background: #f9fafb;
+        font-family: 'Inter', sans-serif;
         margin: 0;
         padding: 0;
+        background-color: #f9fafb;
+        color: #111;
+        line-height: 1.6;
+      }
+      header, section, footer {
+        padding: 4rem 2rem;
+        max-width: 800px;
+        margin: 0 auto;
         text-align: center;
       }
-      .container {
-        max-width: 600px;
-        margin: 5rem auto;
-        padding: 2rem;
-      }
       h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      h2 {
+        font-size: 1.75rem;
+        margin-top: 3rem;
       }
       .cta-button {
         display: inline-block;
-        background-color: #0070f3;
+        background: #0070f3;
         color: white;
-        padding: 0.75rem 1.5rem;
+        padding: 1rem 2rem;
         border-radius: 8px;
-        margin-top: 1rem;
         text-decoration: none;
+        font-weight: 600;
+        transition: background 0.3s;
+        margin-top: 1rem;
       }
       .cta-button:hover {
-        background-color: #005bb5;
+        background: #005bb5;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+      }
+      li {
+        margin: 1rem 0;
+      }
+      table {
+        width: 100%;
+        margin-top: 2rem;
+        border-collapse: collapse;
+      }
+      td, th {
+        padding: 0.75rem;
+        border-bottom: 1px solid #ccc;
+        text-align: left;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Join the Movement</h1>
-      <p>Our Prototype is Live. Be Among the First to Try It.</p>
-      <a class="cta-button" href="https://kickstarter.com" target="_blank">Sign Up Now</a>
-    </div>
+    <header>
+      <h1>{tagline}</h1>
+      <p>{subtitle}</p>
+      <a class="cta-button" href={ctaLink} target="_blank">{ctaText}</a>
+    </header>
+
+    <section>
+      <h2>The Problem</h2>
+      <p>Traditional foam rollers warm up after minutes. Ice packs slide off. You need pressure <strong>and</strong> cold — and you need it to last.</p>
+    </section>
+
+    <section>
+      <h2>Meet Backblizzard</h2>
+      <p>A purpose-built foam roller with a freezable cold core and a firm-yet-comfortable surface.</p>
+      <ul>
+        <li>❄️ Holds cold for 30+ minutes</li>
+        <li>🧘 Full-spine width, perfect for laying flat</li>
+        <li>💪 Durable, non-slip exterior</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Why It Works</h2>
+      <table>
+        <tr><th>Feature</th><th>Why It Matters</th></tr>
+        <tr><td>Freezable core</td><td>Targets inflammation deeply</td></tr>
+        <tr><td>High-density shell</td><td>Supports deep muscle release</td></tr>
+        <tr><td>Ergonomic design</td><td>Aligns with your spine</td></tr>
+        <tr><td>Cold therapy anywhere</td><td>No plugs, no mess</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Early Backer Rewards</h2>
+      <ul>
+        <li>🚀 Founders-only pricing</li>
+        <li>🎁 Bonus recovery content</li>
+        <li>📢 Your feedback shapes the final design</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Freeze your pain, not your progress.</h2>
+      <a class="cta-button" href={ctaLink} target="_blank">{ctaText}</a>
+    </section>
+
+    <footer>
+      <p>Made with ❤️ by Backblizzard</p>
+    </footer>
   </body>
-</html> 
+</html>
