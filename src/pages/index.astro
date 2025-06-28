@@ -1,11 +1,67 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = "Join the Movement";
+const subtitle = "Our Prototype is Live. Be Among the First to Try It.";
+const ctaText = "Sign Up Now";
+const ctaLink = "https://kickstarter.com"; // change to your actual link
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        background: #f9fafb;
+        color: #111;
+      }
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 2rem;
+        text-align: center;
+      }
+      .cta-button {
+        background: #0070f3;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 1rem;
+      }
+      .cta-button:hover {
+        background: #005bb5;
+      }
+      ul {
+        text-align: left;
+        list-style: none;
+        padding: 0;
+      }
+      li {
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+      <a class="cta-button" href={ctaLink} target="_blank">{ctaText}</a>
+
+      <section>
+        <h2>Why Join?</h2>
+        <ul>
+          <li><strong>🚀 Early Access:</strong> Be the first to explore new features.</li>
+          <li><strong>💬 Feedback Channel:</strong> Help shape our product.</li>
+          <li><strong>🎁 Perks:</strong> Exclusive benefits for early users.</li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
