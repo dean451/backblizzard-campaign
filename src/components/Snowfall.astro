@@ -1,9 +1,9 @@
 ---
-const snowflakes = Array.from({ length: 20 }, () => ({
+const snowflakes = Array.from({ length: 8 }, () => ({
   left: Math.random() * 100,
-  symbol: ["❄️", "❄️", "❄️"][Math.floor(Math.random() * 2)],
-  duration: 4 + Math.random() * 6,
-  drift: (Math.random() - 0.5) * 300 // -150px to +150px for stronger drift
+  symbol: ["❄️", "❄️"][Math.floor(Math.random())],
+  duration: 10 + Math.random() * 8, // 10s to 18s
+  drift: (Math.random() - 0.5) * 300 // -150px to +150px
 }));
 ---
 <style>
