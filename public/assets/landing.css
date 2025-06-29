@@ -80,7 +80,7 @@ h2 {
 }
 .cta-button {
   display: inline-block;
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  background: linear-gradient(45deg, #028858, #199c3a);
   color: white;
   padding: 1rem 2rem;
   border-radius: 50px;
@@ -88,12 +88,12 @@ h2 {
   font-weight: 600;
   transition: all 0.3s ease;
   margin-top: 1rem;
-  box-shadow: 0 4px 15px rgba(238, 90, 36, 0.4);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.25);
   text-shadow: none;
 }
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(238, 90, 36, 0.6);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.45);
 }
 ul {
   list-style: none;
@@ -106,7 +106,7 @@ li {
   padding: 1rem;
   border-radius: 10px;
   border-left: 4px solid #49e5ed;
-  border-left: 4px solid #49e5ed;
+  border-right: 4px solid #49e5ed;
 }
 table {
   width: 100%;
