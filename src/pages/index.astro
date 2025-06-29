@@ -31,6 +31,55 @@ import Snowfall from '../components/Snowfall.astro';
         margin-bottom: 2rem;
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
+      @media (max-width: 600px) {
+        header, section, footer {
+          padding: 2rem 0.5rem;
+          max-width: 98vw;
+        }
+        h1 {
+          font-size: 1.5rem;
+        }
+        h2 {
+          font-size: 1.1rem;
+          margin-top: 2rem;
+        }
+        .cta-button {
+          padding: 0.75rem 1.2rem;
+          font-size: 1rem;
+        }
+        .content-wrapper {
+          padding: 0.5rem 0;
+        }
+        ul, li, table, td, th {
+          font-size: 0.95rem;
+        }
+        /* Responsive image circles */
+        .circle-img-row {
+          flex-direction: column !important;
+          gap: 1rem !important;
+        }
+        .circle-img {
+          width: 120px !important;
+          height: 120px !important;
+        }
+        .circle-img img {
+          width: 90px !important;
+          height: 90px !important;
+        }
+        /* My Story section */
+        .my-story-flex {
+          flex-direction: column !important;
+          gap: 1.2rem !important;
+        }
+        .my-story-img {
+          width: 100px !important;
+          height: 100px !important;
+        }
+        .my-story-img img {
+          width: 70px !important;
+          height: 70px !important;
+        }
+      }
       h1 {
         font-size: 2.5rem;
         margin-bottom: 1rem;
@@ -121,14 +170,14 @@ import Snowfall from '../components/Snowfall.astro';
           <li>🧘 Full-spine width, perfect for laying flat</li>
           <li>💪 Durable, non-slip exterior</li>
         </ul>
-        <div style="display: flex; gap: 2rem; justify-content: center; margin-top: 2rem;">
-          <div style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
+        <div class="circle-img-row" style="display: flex; gap: 2rem; justify-content: center; margin-top: 2rem;">
+          <div class="circle-img" style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
             <img src="/one.png" alt="Backblizzard Roller 1" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: transparent;" />
           </div>
-          <div style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
+          <div class="circle-img" style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
             <img src="/two.png" alt="Backblizzard Roller 2" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: transparent;" />
           </div>
-          <div style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
+          <div class="circle-img" style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
             <img src="/three.png" alt="Backblizzard Roller 3" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: transparent;" />
           </div>
         </div>
@@ -156,14 +205,14 @@ import Snowfall from '../components/Snowfall.astro';
 
       <section>
         <h2>My Story</h2>
-        <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+        <div class="my-story-flex" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
           <div style="flex: 1; min-width: 220px; text-align: left;">
             <p>
               Hi, I'm Dean, creator of <i>Backblizzard</i>. After years of struggling with back pain and trying every foam roller and ice pack on the market, I realized nothing truly combined deep cold therapy with the pressure and support I needed. So I set out to design a better solution. One that could help people like me recover faster and move better every day. Thank you for supporting this journey!
             </p>
           </div>
           <div style="flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-            <div style="width: 140px; height: 140px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
+            <div class="my-story-img" style="width: 140px; height: 140px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
               <img src="/face.jpg" alt="Creator portrait" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; background: transparent;" />
             </div>
           </div>
