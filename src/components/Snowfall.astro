@@ -1,7 +1,7 @@
 ---
 const snowflakes = Array.from({ length: 20 }, () => ({
   left: Math.random() * 100,
-  symbol: ["❄️", "❅", "❆"][Math.floor(Math.random() * 3)],
+  symbol: ["❄️", "❄️", "❄️"][Math.floor(Math.random() * 2)],
   duration: 4 + Math.random() * 6,
   drift: (Math.random() - 0.5) * 300 // -150px to +150px for stronger drift
 }));
