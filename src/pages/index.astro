@@ -118,7 +118,8 @@ import Snowfall from '../components/Snowfall.astro';
         background: rgba(255, 255, 255, 0.1);
         padding: 1rem;
         border-radius: 10px;
-        border-left: 4px solid #ff6b6b;
+        border-left: 4px solid #49e5ed;
+        border-left: 4px solid #49e5ed;
       }
       table {
         width: 100%;
@@ -144,6 +145,24 @@ import Snowfall from '../components/Snowfall.astro';
         position: relative;
         z-index: 2;
         padding: 2rem 0;
+      }
+      .circle-img img,
+      .my-story-img img {
+        transition: transform 0.35s cubic-bezier(.4,1.5,.5,1), box-shadow 0.35s cubic-bezier(.4,1.5,.5,1);
+      }
+      .circle-img img:hover {
+        transform: scale(1.32) rotate(-2deg);
+        z-index: 3;
+        box-shadow: 0 12px 60px 0 rgba(0,0,0,0.32), 0 0 0 6px #fff6;
+        border: 3px solid #fff;
+      }
+      .my-story-img img {
+        transition: transform 0.35s cubic-bezier(.4,1.5,.5,1), box-shadow 0.35s cubic-bezier(.4,1.5,.5,1);
+      }
+      .my-story-img img:hover {
+        transform: scale(1.13);
+        z-index: 2;
+        box-shadow: 0 8px 40px 0 rgba(0,0,0,0.22);
       }
     </style>
   </head>
@@ -171,6 +190,28 @@ import Snowfall from '../components/Snowfall.astro';
           <li>🧘 Full-spine width, perfect for laying flat</li>
           <li>💪 Durable, non-slip exterior</li>
         </ul>
+        <style>
+          /* 2x2 grid for images on larger screens */
+          @media (min-width: 700px) {
+            .circle-img-row {
+              display: grid !important;
+              grid-template-columns: 1fr 1fr;
+              grid-template-rows: 1fr 1fr;
+              gap: 2.5rem !important;
+              justify-items: center;
+              align-items: center;
+              margin-top: 2.5rem !important;
+            }
+            .circle-img {
+              width: 240px !important;
+              height: 240px !important;
+            }
+            .circle-img img {
+              width: 180px !important;
+              height: 180px !important;
+            }
+          }
+        </style>
         <div class="circle-img-row" style="display: flex; gap: 2rem; justify-content: center; margin-top: 2rem;">
           <div class="circle-img" style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
             <img src="/one.png" alt="Backblizzard Roller 1" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: transparent;" />
@@ -180,6 +221,9 @@ import Snowfall from '../components/Snowfall.astro';
           </div>
           <div class="circle-img" style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
             <img src="/three.png" alt="Backblizzard Roller 3" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: transparent;" />
+          </div>
+          <div class="circle-img" style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
+            <img src="/four.png" alt="Backblizzard Roller 3" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: transparent;" />
           </div>
         </div>
       </section>
