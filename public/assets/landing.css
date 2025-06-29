@@ -90,10 +90,40 @@ h2 {
   margin-top: 1rem;
   box-shadow: 0 4px 15px rgba(40, 167, 69, 0.25);
   text-shadow: none;
+  position: relative;
+  overflow: visible;
 }
 .cta-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(40, 167, 69, 0.45);
+}
+.cta-button .cta-snowflake {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-size: 1.5em;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.cta-button.snowburst .cta-snowflake {
+  opacity: 1;
+  animation: snowburst 0.8s cubic-bezier(.4,1.5,.5,1) forwards;
+}
+@keyframes snowburst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-50%, -120%) scale(1.2) rotate(-10deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -200%) scale(0.8) rotate(20deg);
+  }
 }
 ul {
   list-style: none;

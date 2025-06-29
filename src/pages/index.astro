@@ -21,7 +21,10 @@ import Snowfall from '../components/Snowfall.astro';
       <header>
         <h1>Put your back pain on ice.</h1>
         <p>The world's first cold therapy foam roller, designed to freeze inflammation and restore mobility.</p>
-        <a class="cta-button" href="https://www.kickstarter.com" target="_blank">Back us on Kickstarter</a>
+        <a class="cta-button" href="https://www.kickstarter.com" target="_blank">
+          Back us on Kickstarter
+          <span class="cta-snowflake">❄️ ❄️ ❄️ ❄️ </span>
+        </a>
       </header>
 
       <section>
@@ -90,12 +93,27 @@ import Snowfall from '../components/Snowfall.astro';
 
       <section>
         <h2>Freeze your pain, not your progress.</h2>
-        <a class="cta-button" href="https://www.kickstarter.com" target="_blank">Back us on Kickstarter</a>
+        <a class="cta-button" href="https://www.kickstarter.com" target="_blank">
+          Back us on Kickstarter
+          <span class="cta-snowflake">❄️ ❄️ ❄️ ❄️</span>
+        </a>
       </section>
 
       <footer>
         <p>Made with ❄️ by Backblizzard</p>
       </footer>
     </div>
+
+    <script>
+      // Snowflake burst effect on CTA hover
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.cta-button').forEach(btn => {
+          btn.addEventListener('mouseenter', () => {
+            btn.classList.add('snowburst');
+            setTimeout(() => btn.classList.remove('snowburst'), 800);
+          });
+        });
+      });
+    </script>
   </body>
 </html>
