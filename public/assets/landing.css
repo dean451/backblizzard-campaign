@@ -204,12 +204,43 @@ th {
 }
 @media (max-width: 600px) {
   .circle-img {
-    width: 120px !important;
-    height: 120px !important;
+    width: 90vw !important;
+    height: 90vw !important;
+    max-width: 340px !important;
+    max-height: 340px !important;
   }
   .circle-img img {
-    width: 90px !important;
-    height: 90px !important;
+    width: 70vw !important;
+    height: 70vw !important;
+    max-width: 260px !important;
+    max-height: 260px !important;
+  }
+  .circle-img-row {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
+  }
+  #convert {
+    width: 90vw !important;
+    height: 90vw !important;
+    max-width: 340px !important;
+    max-height: 340px !important;
+  }
+  #convert img {
+    width: 70vw !important;
+    height: 70vw !important;
+    max-width: 260px !important;
+    max-height: 260px !important;
+  }
+  .convert-caption {
+    display: block !important;
+    margin-top: 0.75rem;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    text-align: center;
   }
 }
 @media (min-width: 700px) {
@@ -274,6 +305,7 @@ th {
   transition: opacity 0.5s, transform 0.5s;
   z-index: 3;
   pointer-events: none;
+  opacity: 0;
 }
 #convert:hover #convert-img {
   opacity: 0;
@@ -281,4 +313,11 @@ th {
 #convert:hover::after {
   opacity: 1;
   transform: translate(-50%, -50%) scale(2.3); 
+}
+.hover-hide-img:hover img {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.hover-hide-img img {
+  transition: opacity 0.3s;
 }

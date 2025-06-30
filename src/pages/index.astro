@@ -20,27 +20,6 @@ import Snowfall from '../components/Snowfall.astro';
     <div class="content-wrapper">
       <header>
         <h1>Put your back pain on ice.</h1>
-        <style>
-          @media (max-width: 600px) {
-            .circle-img {
-              width: 90vw !important;
-              height: 90vw !important;
-              max-width: 340px !important;
-              max-height: 340px !important;
-            }
-            .circle-img img {
-              width: 70vw !important;
-              height: 70vw !important;
-              max-width: 260px !important;
-              max-height: 260px !important;
-            }
-            .circle-img-row {
-              flex-direction: column !important;
-              gap: 1.5rem !important;
-              align-items: center !important;
-            }
-          }
-        </style>
         <p>The world's first cold therapy foam roller, designed to freeze inflammation and restore mobility.</p>
         <a class="cta-button" href="https://www.kickstarter.com" target="_blank">
           Back us on Kickstarter
@@ -61,57 +40,24 @@ import Snowfall from '../components/Snowfall.astro';
           <li>🧘 Full-spine width, perfect for laying flat</li>
           <li>💪 Durable, non-slip exterior</li>
         </ul>
-        <div class="circle-img-row" style="display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; align-items: center;">
-          <div class="circle-img" style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
-            <img src="/one.png" alt="Backblizzard Roller 1" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: transparent;" />
+        <div class="circle-img-row">
+          <div class="circle-img">
+            <img src="/one.png" alt="Backblizzard Roller 1" />
           </div>
-          <div class="circle-img" style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
-            <img src="/two.png" alt="Backblizzard Roller 2" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: transparent;" />
+          <div class="circle-img">
+            <img src="/two.png" alt="Backblizzard Roller 2" />
           </div>
-          <div class="circle-img" style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
-            <img src="/three.png" alt="Backblizzard Roller 3" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: transparent;" />
+          <div class="circle-img">
+            <img src="/three.png" alt="Backblizzard Roller 3" />
           </div>
-          <div class="circle-img" style="width: 180px; height: 180px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
-            <img src="/four.png" alt="Backblizzard Roller 3" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; background: transparent;" />
+          <div class="circle-img">
+            <img src="/four.png" alt="Backblizzard Roller 3" />
           </div>
-            <div class="hover-hide-img" id="convert" style="width: 260px; height: 260px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10); flex-direction: column;">
-            <img src="/two.png" alt="Backblizzard Roller 2" style="width: 210px; height: 210px; border-radius: 50%; object-fit: cover; background: transparent;" />
-            </div>
-            <style>
-            @media (max-width: 600px) {
-              #convert {
-              width: 90vw !important;
-              height: 90vw !important;
-              max-width: 340px !important;
-              max-height: 340px !important;
-                }
-              #convert img {
-              width: 70vw !important;
-              height: 70vw !important;
-              max-width: 260px !important;
-              max-height: 260px !important;
-              }
-              .convert-caption {
-              display: block !important;
-              margin-top: 0.75rem;
-              font-size: 1.1rem;
-              color: #fff;
-              font-weight: 600;
-              letter-spacing: 0.01em;
-              text-shadow: 0 2px 8px rgba(0,0,0,0.18);
-              text-align: center;
-              }
-            }
-            .hover-hide-img:hover img {
-              opacity: 0;
-              transition: opacity 0.3s;
-            }
-            .hover-hide-img img {
-              transition: opacity 0.3s;
-            }
-            </style>
+          <div class="hover-hide-img" id="convert">
+            <img src="/two.png" alt="Backblizzard Roller 2" />
+          </div>
         </div>
-                    <span class="convert-caption" style="display: block; margin-top: 0.75rem; font-size: 1.1rem; color: #fff; font-weight: 600; letter-spacing: 0.01em; text-shadow: 0 2px 8px rgba(0,0,0,0.18); text-align: center; width: 100%;">Hover to see roller expand to fit icepack</span>
+        <span class="convert-caption">Hover to see roller expand to fit icepack</span>
       </section>
 
       <section>
@@ -135,15 +81,15 @@ import Snowfall from '../components/Snowfall.astro';
 
       <section>
         <h2>My Story</h2>
-        <div class="my-story-flex" style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-          <div style="flex: 1; min-width: 220px; text-align: left;">
+        <div class="my-story-flex">
+          <div>
             <p>
               Hi, I'm Dean, creator of <i>Backblizzard</i>. After years of struggling with back pain and trying every foam roller and ice pack on the market, I realized nothing truly combined deep cold therapy with the pressure and support I needed. So I set out to design a better solution. One that could help people like me recover faster and move better every day. Thank you for supporting this journey!
             </p>
           </div>
-          <div style="flex-shrink: 0; display: flex; align-items: center; justify-content: center;">
-            <div class="my-story-img" style="width: 140px; height: 140px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10);">
-              <img src="/face.jpg" alt="Creator portrait" style="width: 110px; height: 110px; border-radius: 50%; object-fit: cover; background: transparent;" />
+          <div>
+            <div class="my-story-img">
+              <img src="/face.jpg" alt="Creator portrait" />
             </div>
           </div>
         </div>
