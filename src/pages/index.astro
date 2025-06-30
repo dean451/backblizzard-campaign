@@ -76,9 +76,32 @@ import Snowfall from '../components/Snowfall.astro';
           </div>
             <div class="hover-hide-img" id="convert" style="width: 260px; height: 260px; background: rgba(255,255,255,0.18); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 18px rgba(0,0,0,0.10); flex-direction: column;">
             <img src="/two.png" alt="Backblizzard Roller 2" style="width: 210px; height: 210px; border-radius: 50%; object-fit: cover; background: transparent;" />
-            <span style="margin-top: 0.75rem; font-size: 1.1rem; color: #fff; font-weight: 600; letter-spacing: 0.01em; text-shadow: 0 2px 8px rgba(0,0,0,0.18);">Roller expands to fit icepack</span>
             </div>
             <style>
+            @media (max-width: 600px) {
+              #convert {
+              width: 90vw !important;
+              height: 90vw !important;
+              max-width: 340px !important;
+              max-height: 340px !important;
+                }
+              #convert img {
+              width: 70vw !important;
+              height: 70vw !important;
+              max-width: 260px !important;
+              max-height: 260px !important;
+              }
+              .convert-caption {
+              display: block !important;
+              margin-top: 0.75rem;
+              font-size: 1.1rem;
+              color: #fff;
+              font-weight: 600;
+              letter-spacing: 0.01em;
+              text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+              text-align: center;
+              }
+            }
             .hover-hide-img:hover img {
               opacity: 0;
               transition: opacity 0.3s;
@@ -88,7 +111,7 @@ import Snowfall from '../components/Snowfall.astro';
             }
             </style>
         </div>
-        
+                    <span class="convert-caption" style="display: block; margin-top: 0.75rem; font-size: 1.1rem; color: #fff; font-weight: 600; letter-spacing: 0.01em; text-shadow: 0 2px 8px rgba(0,0,0,0.18); text-align: center; width: 100%;">Hover to see roller expand to fit icepack</span>
       </section>
 
       <section>
