@@ -165,10 +165,26 @@ th {
   transition: transform 0.35s cubic-bezier(.4,1.5,.5,1), box-shadow 0.35s cubic-bezier(.4,1.5,.5,1);
 }
 .circle-img img:hover {
-  transform: scale(2.5) rotate(-2deg);
+  transform: scale(2.5) rotate(-6deg);
   z-index: 3;
   box-shadow: 0 12px 60px 0 rgba(0,0,0,0.32), 0 0 0 6px #fff6;
   border: 3px solid #fff;
+}
+.circle-img:nth-child(1) img {
+  transform: scale(1.3) rotate(-6deg);
+}
+.circle-img:nth-child(2) img {
+  transform: scale(1.3) rotate(-6deg);
+}
+.circle-img:nth-child(3) img {
+  transform: scale(1.3) rotate(-6deg);
+}
+.circle-img:nth-child(4) img {
+  transform: scale(1.3) rotate(-6deg);
+}
+.circle-img img:hover {
+  /* override base transform on hover */
+  transform: scale(2.5) rotate(-6deg);
 }
 .my-story-img img {
   transition: transform 0.35s cubic-bezier(.4,1.5,.5,1), box-shadow 0.35s cubic-bezier(.4,1.5,.5,1);
@@ -210,8 +226,60 @@ th {
     width: 240px !important;
     height: 240px !important;
   }
+  #convert {
+    grid-column: 1 / -1;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px !important;
+    height: 350px !important;
+  }
   .circle-img img {
     width: 180px !important;
     height: 180px !important;
   }
+}
+#convert {
+  position: relative;
+  overflow: hidden;
+}
+#convert-img {
+  transition: opacity 0.5s;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1.3) rotate(-6deg); /* Match base scale/rotation */
+  z-index: 2;
+  opacity: 1;
+  pointer-events: none;
+}
+#convert::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: url('/three.png') center/cover no-repeat;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%) scale(1.3) rotate(-6deg); /* Match base scale/rotation */
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+  z-index: 3;
+  pointer-events: none;
+}
+#convert:hover #convert-img {
+  opacity: 0;
+}
+#convert:hover::after {
+  opacity: 1;
+  transform: translate(-50%, -70%) scale(2.3) rotate(-6deg); /* Move up a bit more on hover and scale up */
 }
