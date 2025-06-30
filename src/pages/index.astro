@@ -20,6 +20,27 @@ import Snowfall from '../components/Snowfall.astro';
     <div class="content-wrapper">
       <header>
         <h1>Put your back pain on ice.</h1>
+        <style>
+          @media (max-width: 600px) {
+            .circle-img {
+              width: 90vw !important;
+              height: 90vw !important;
+              max-width: 340px !important;
+              max-height: 340px !important;
+            }
+            .circle-img img {
+              width: 70vw !important;
+              height: 70vw !important;
+              max-width: 260px !important;
+              max-height: 260px !important;
+            }
+            .circle-img-row {
+              flex-direction: column !important;
+              gap: 1.5rem !important;
+              align-items: center !important;
+            }
+          }
+        </style>
         <p>The world's first cold therapy foam roller, designed to freeze inflammation and restore mobility.</p>
         <a class="cta-button" href="https://www.kickstarter.com" target="_blank">
           Back us on Kickstarter
