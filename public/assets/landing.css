@@ -274,7 +274,12 @@ th {
 }
 #convert {
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* allow scaling images to overflow */
+  width: 350px !important;
+  height: 350px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #convert-img {
   transition: opacity 0.5s;
@@ -301,18 +306,24 @@ th {
   background: url('/three.png') center/cover no-repeat;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(1.3); 
+  transform: translate(-50%, -50%) scale(2.3);
   transition: opacity 0.5s, transform 0.5s;
   z-index: 3;
   pointer-events: none;
-  opacity: 0;
+  opacity: 0; /* hidden by default */
 }
-#convert:hover #convert-img {
-  opacity: 0;
+#convert img {
+  transition: opacity 0.5s;
+  opacity: 1; /* visible by default */
+  position: relative;
+  z-index: 4;
 }
 #convert:hover::after {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(2.3); 
+  opacity: 1; /* fade in image three */
+  transform: translate(-50%, -50%) scale(3.5);
+}
+#convert:hover img {
+  opacity: 0; /* fade out image two */
 }
 .hover-hide-img:hover img {
   opacity: 0;
