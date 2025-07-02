@@ -62,6 +62,11 @@ header, section, footer {
   .my-story-img {
     width: 100px !important;
     height: 100px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
   .my-story-img img {
     width: 70px !important;
@@ -165,26 +170,34 @@ th {
   transition: transform 0.35s cubic-bezier(.4,1.5,.5,1), box-shadow 0.35s cubic-bezier(.4,1.5,.5,1);
 }
 .circle-img img:hover {
-  transform: scale(2.5) rotate(-6deg);
+  transform: scale(2.5) rotate(0deg);
   z-index: 3;
   box-shadow: 0 12px 60px 0 rgba(0,0,0,0.32), 0 0 0 6px #fff6;
   border: 3px solid #fff;
 }
+@media (max-width: 600px) {
+  .circle-img img:hover {
+    transform: scale(1.5) rotate(0deg) !important;
+    z-index: 3;
+    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.22), 0 0 0 3px #fff6;
+    border: 2px solid #fff;
+  }
+}
 .circle-img:nth-child(1) img {
-  transform: scale(1.3) rotate(-6deg);
+  transform: scale(1.3) rotate(0deg);
 }
 .circle-img:nth-child(2) img {
-  transform: scale(1.3) rotate(-6deg);
+  transform: scale(1.3) rotate(0deg);
 }
 .circle-img:nth-child(3) img {
-  transform: scale(1.3) rotate(-6deg);
+  transform: scale(1.3) rotate(-1deg);
 }
 .circle-img:nth-child(4) img {
-  transform: scale(1.3) rotate(-6deg);
+  transform: scale(1.3) rotate(0deg);
 }
 .circle-img img:hover {
   /* override base transform on hover */
-  transform: scale(2.5) rotate(-6deg);
+  transform: scale(2.5) rotate(0deg);
 }
 .my-story-img img {
   transition: transform 0.35s cubic-bezier(.4,1.5,.5,1), box-shadow 0.35s cubic-bezier(.4,1.5,.5,1);
@@ -221,10 +234,17 @@ th {
     align-items: center !important;
   }
   #convert {
-    width: 90vw !important;
-    height: 90vw !important;
-    max-width: 340px !important;
-    max-height: 340px !important;
+    width: 98vw !important;
+    height: 98vw !important;
+    max-width: 420px !important;
+    max-height: 420px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-inline: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
   }
   #convert img {
     width: 70vw !important;
@@ -331,4 +351,7 @@ th {
 }
 .hover-hide-img img {
   transition: opacity 0.3s;
+}
+.feature-list {
+  padding-bottom: 2.5rem;
 }
