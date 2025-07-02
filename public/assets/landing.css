@@ -171,16 +171,15 @@ th {
 }
 .circle-img img:hover {
   transform: scale(2.5) rotate(0deg);
-  z-index: 3;
-  box-shadow: 0 12px 60px 0 rgba(0,0,0,0.32), 0 0 0 6px #fff6;
-  border: 3px solid #fff;
+  box-shadow: none !important;
+  border: none;
 }
 @media (max-width: 600px) {
   .circle-img img:hover {
     transform: scale(1.5) rotate(0deg) !important;
     z-index: 3;
-    box-shadow: 0 6px 24px 0 rgba(0,0,0,0.22), 0 0 0 3px #fff6;
-    border: 2px solid #fff;
+    box-shadow: none !important;
+    border: none !important;
   }
 }
 .circle-img:nth-child(1) img {
