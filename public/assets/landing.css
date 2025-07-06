@@ -206,6 +206,41 @@ th {
   z-index: 2;
   box-shadow: 0 8px 40px 0 rgba(0,0,0,0.22);
 }
+
+/* Oval image class */
+.oval-img {
+  width: 220px;
+  height: 140px !important;
+  border-radius: 85% / 20%;
+  object-fit: cover;
+  display: block;
+  background: transparent;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.13);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 260px;
+  height: 170px !important;
+  transition: transform 0.35s cubic-bezier(.4,1.5,.5,1), box-shadow 0.35s cubic-bezier(.4,1.5,.5,1);
+}
+.oval-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.22);
+  z-index: 2;
+}
+
+/* Smaller oval image caption */
+.oval-img-caption-two {
+  display: block !important;
+  text-align: center;
+  padding-bottom: 0.7rem;
+  font-size: 0.65rem;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+}
 .circle-img img {
   width: 273px !important;
   height: 273px !important;
@@ -233,33 +268,55 @@ th {
     align-items: center !important;
   }
   #convert {
-    width: 98vw !important;
-    height: 98vw !important;
-    max-width: 420px !important;
-    max-height: 420px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-inline: auto !important;
+    width: 90vw !important;
+    height: 90vw !important;
+    max-width: 340px !important;
+    max-height: 340px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-right: auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     box-sizing: border-box !important;
+    min-width: 140px !important;
+    min-height: 140px !important;
   }
-  #convert img {
+  #convert img,
+  #convert #convert-img {
     width: 70vw !important;
     height: 70vw !important;
     max-width: 260px !important;
     max-height: 260px !important;
+    min-width: 100px !important;
+    min-height: 100px !important;
+    display: block;
+    margin: 0 auto;
   }
   .convert-caption {
     display: block !important;
-    margin-top: 0.75rem;
+    margin-top: 2.5rem;
     font-size: 1.1rem;
     color: #fff;
     font-weight: 600;
     letter-spacing: 0.01em;
     text-shadow: 0 2px 8px rgba(0,0,0,0.18);
     text-align: center;
+  }
+  @media (min-width: 700px) {
+    .convert-caption {
+      margin-top: 4.5rem;
+    }
+  }
+  .oval-img-caption {
+    display: block !important;
+    text-align: center;
+    padding-bottom: 1rem;
+    font-size: 1.05rem;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
   }
 }
 @media (min-width: 700px) {
@@ -353,4 +410,12 @@ th {
 }
 .feature-list {
   padding-bottom: 2.5rem;
+}
+@media (max-width: 700px) {
+  .convert-caption {
+    display: block;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1em;
+  }
 }
