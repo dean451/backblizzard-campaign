@@ -211,7 +211,6 @@ th {
 .oval-img {
   width: 220px;
   height: 140px !important;
-  border-radius: 85% / 20%;
   object-fit: cover;
   display: block;
   background: transparent;
